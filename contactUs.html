@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactUa.css">
+    <link rel="stylesheet" href="styleFooter.css">
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || phone === "" || message === "") {
+                alert("Please fill out all fields before submitting.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="row">
+            <h4 style="text-align:center">We'd love to hear from you!</h4>
+        </div>
+        <form action="contact.php" method="POST" onsubmit="return validateForm()">
+            <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <input type="text" id="name" name="name" required />
+                        <label>Name</label> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                        <input type="email" id="email" name="email" required />
+                        <label>Email</label> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+                        <input type="text" id="phone" name="phone" required />
+                        <label>Phone Number</label> 
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <textarea id="message" name="message" required></textarea>
+                        <label>Message</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <button type="submit" class="btn-lrg submit-btn">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
